@@ -1,6 +1,7 @@
 # AuthFlask Application
 
 AuthFlask is a web application designed to practice authentication with Flask and other libraries. This project demonstrates the use of Flask, SQLAlchemy, Flask-Migrate, WTForms, and SQLite to build a simple CRUD-based web app.
+
 ---
 
 ## Installation
