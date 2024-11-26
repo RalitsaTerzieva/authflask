@@ -42,4 +42,23 @@ def login():
             return redirect(next)
         
         return render_template('login.html', form=form)
+    
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+
+    form = RegistrationForm()
+
+    if form.validate_on_submit():
+
+        user = User.query.get(email=form.email.data, username=form.username.data, password=form.password.data)
+
+        db.session.add(user)
+        db.session.commit()
+        flash('Thanks for registration!')
+        return redirect(url_for('login'))
+    return render_template('register.html', form=form)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 
