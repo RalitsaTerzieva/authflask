@@ -17,11 +17,11 @@
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="{{url_for('home')}}">Home</a>
               <!-- the current user is comming from flask login library-->
-              {% if.current_user.is_authenticated %}
-                <li class="nav-link"><a href="{{url_for('logout')}}">Logout</a></li>
+              {% if current_user.is_authenticated %}
+                <a href="{{url_for('logout')}}" class="nav-link active" aria-current="page">Logout</a>
               {% else %}
-                <li class="nav-link"><a href="{{url_for('login')}}">Login</a></li>
-                <li class="nav-link"><a href="{{url_for('register')}}">Register</a></li>
+                <a href="{{url_for('login')}}" class="nav-link active" aria-current="page">Login</a>
+                <a href="{{url_for('register')}}" class="nav-link active" aria-current="page">Register</a>
               {% endif %}
             </div>
           </div>
